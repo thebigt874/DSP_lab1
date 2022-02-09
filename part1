@@ -1,0 +1,39 @@
+clear all; 
+clf
+T1s = 1;   % Sampling time
+t1 = 0:T1s:9; % support of signal
+X1s = .01;
+x1 = 0:X1s:9;
+% Cosine function
+y1 = cos(20*.01*2*pi*t1);
+z1 = cos(20*.01*2*pi*x1);
+
+T2s = 1;   % Sampling time
+t2 = 0:T2s:9; % support of signal
+X2s = .01;
+x2 = 0:X2s:9;
+% Cosine function
+y2 = cos(80*.01*2*pi*t2);
+z2 = cos(80*.01*2*pi*x2);
+
+subplot(1,2,1)
+plot(t1,y1); 
+hold on
+plot(x1, z1)
+
+axis([0 9 -1 1]);
+title('No Allasing at 20 Hz');
+xlabel('time (seconds)');
+ylabel('x(n)');
+grid
+
+subplot(1,2,2)
+plot(t2,y2)
+hold on 
+plot(x2,z2)
+
+axis([0 9 -1 1]);
+title('Allasing at 80 Hz');
+xlabel('time (seconds)');
+ylabel('x(n)');
+grid
